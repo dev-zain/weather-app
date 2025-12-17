@@ -88,7 +88,18 @@ Create a `.env` file in the root directory with the following variables:
 
 This app can be deployed on Railway, Heroku, or any platform supporting Django.
 
-**Live Demo:** [Coming Soon](#)
+**Live Demo:**(https://web-production-c3ac9.up.railway.app/)
+
+## 📝 To-Do / Future Enhancements
+
+- [ ] Add 5-day weather forecast
+- [ ] Add geolocation support
+- [ ] Add multiple city comparison
+- [ ] Add weather alerts and notifications
+- [ ] Add dark mode toggle
+- [ ] Add unit conversion (°C to °F)
+- [ ] Add search history
+- [ ] Add weather maps integration
 
 ## 👨‍💻 Author
 
