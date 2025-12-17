@@ -81,7 +81,6 @@ Create a `.env` file in the root directory with the following variables:
 | `SECRET_KEY` | Django secret key for security |
 | `DEBUG` | Set to `True` for development, `False` for production |
 
-## 📁 Project Structure
 
 
 
