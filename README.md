@@ -12,7 +12,6 @@ A modern, responsive weather application built with Django that provides real-ti
 - 🎨 Beautiful, responsive UI with smooth animations
 - 🌡️ Displays temperature, humidity, wind speed, pressure, and visibility
 - 📱 Mobile-friendly design
-- ✅ Input validation for city names
 
 ## 🛠️ Tech Stack
 
@@ -84,24 +83,7 @@ Create a `.env` file in the root directory with the following variables:
 
 ## 📁 Project Structure
 
-```
-weather-app/
-├── weatherapp/              # Main project directory
-│   ├── settings.py          # Django settings
-│   ├── urls.py              # URL configuration
-│   └── wsgi.py              # WSGI configuration
-├── weather/                 # Weather app
-│   ├── views.py             # View logic
-│   ├── urls. py              # App URLs
-│   ├── templates/           # HTML templates
-│   └── static/              # CSS, JS, images
-├── . env                     # Environment variables (not in repo)
-├── .gitignore               # Git ignore file
-├── requirements.txt         # Python dependencies
-├── Procfile                 # Deployment configuration
-├── README.md                # This file
-└── manage.py                # Django management script
-```
+
 
 ## 🚀 Deployment
 
