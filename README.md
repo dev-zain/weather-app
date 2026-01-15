@@ -9,6 +9,8 @@ A modern, responsive weather application built with Django that provides real-ti
 ## ✨ Features
 
 - 🌍 Real-time weather data for any city worldwide
+- 📅 **5-Day Weather Forecast** with daily predictions
+- 📍 **Geolocation Support** - automatically detect your location
 - 🎨 Beautiful, responsive UI with smooth animations
 - 🌡️ Displays temperature, humidity, wind speed, pressure, and visibility
 - 📱 Mobile-friendly design
@@ -92,8 +94,8 @@ This app can be deployed on Railway, Heroku, or any platform supporting Django.
 
 ## 📝 To-Do / Future Enhancements
 
-- [ ] Add 5-day weather forecast
-- [ ] Add geolocation support
+- [x] Add 5-day weather forecast
+- [x] Add geolocation support
 - [ ] Add multiple city comparison
 - [ ] Add weather alerts and notifications
 - [ ] Add dark mode toggle
