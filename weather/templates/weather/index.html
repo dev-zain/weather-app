@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App - Check Weather Anywhere</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare. com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -21,20 +24,20 @@
         <div class="search-box">
             <form method="POST" action="{% url 'index' %}" id="weatherForm">
                 {% csrf_token %}
+                <input type="hidden" name="lat" id="lat">
+                <input type="hidden" name="lon" id="lon">
                 <div class="input-group">
-                    <input 
-                        type="text" 
-                        name="city" 
-                        placeholder="Enter city name (e.g., London, New York, Tokyo)" 
-                        class="search-input"
-                        autocomplete="off"
-                        required
-                    >
+                    <input type="text" name="city" id="cityInput"
+                        placeholder="Enter city name (e.g., London, New York, Tokyo)" class="search-input"
+                        autocomplete="off">
                     <button type="submit" class="search-btn">
                         <i class="fas fa-search"></i> Search
                     </button>
                 </div>
             </form>
+            <button type="button" class="location-btn" id="locateBtn">
+                <i class="fas fa-location-crosshairs"></i> Use My Location
+            </button>
         </div>
 
         <!-- Error Message -->
@@ -56,11 +59,8 @@
             <!-- Main Weather Info -->
             <div class="weather-main">
                 <div class="weather-icon-container">
-                    <img 
-                        src="http://openweathermap.org/img/wn/{{ weather_data.icon }}@4x.png" 
-                        alt="{{ weather_data.description }}"
-                        class="weather-icon"
-                    >
+                    <img src="http://openweathermap.org/img/wn/{{ weather_data.icon }}@4x.png"
+                        alt="{{ weather_data.description }}" class="weather-icon">
                 </div>
                 <div class="temperature">
                     <h1>{{ weather_data.temperature }}°C</h1>
@@ -172,4 +172,5 @@
 
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
