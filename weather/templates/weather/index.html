@@ -120,6 +120,24 @@
                 </div>
             </div>
         </div>
+
+        {% if forecast_data %}
+        <div class="forecast-section">
+            <h2 class="forecast-title">5-Day Forecast</h2>
+            <div class="forecast-grid">
+                {% for day in forecast_data %}
+                <div class="forecast-card">
+                    <p class="forecast-date">{{ day.date }}</p>
+                    <div class="forecast-icon">
+                        <img src="http://openweathermap.org/img/wn/{{ day.icon }}.png" alt="{{ day.description }}">
+                    </div>
+                    <p class="forecast-temp">{{ day.temperature }}°C</p>
+                    <p class="forecast-desc">{{ day.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
         {% endif %}
 
         <!-- Welcome Message (shown when no search has been made) -->

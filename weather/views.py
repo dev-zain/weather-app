@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.conf import settings
 import requests
 from django.contrib import messages
+from datetime import datetime
 
 
 def index(request):
@@ -63,6 +64,29 @@ def index(request):
                     
                     context['weather_data'] = weather_data
                     context['city'] = city
+
+                    # Fetch 5-Day Forecast
+                    forecast_url = "http://api.openweathermap.org/data/2.5/forecast"
+                    forecast_response = requests.get(forecast_url, params=params, timeout=10)
+                    
+                    if forecast_response.status_code == 200:
+                        forecast_raw = forecast_response.json()
+                        forecast_data = []
+                        
+                        for item in forecast_raw['list']:
+                            if '12:00:00' in item['dt_txt']:
+                                date_obj = datetime.strptime(item['dt_txt'], '%Y-%m-%d %H:%M:%S')
+                                forecast_data.append({
+                                    'date': date_obj.strftime('%a, %d %b'), 
+                                    'temperature': round(item['main']['temp']),
+                                    'description': item['weather'][0]['description'].title(),
+                                    'icon': item['weather'][0]['icon']
+                                })
+                                
+                                if len(forecast_data) >= 5:
+                                    break
+                        
+                        context['forecast_data'] = forecast_data
                     
                 elif response.status_code == 404:
                     context['error'] = f"City '{city}' not found.  Please try again."
